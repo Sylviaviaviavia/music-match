@@ -56,14 +56,18 @@ app.use(function(req, res, next) {
 
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use((err, req, res, next) => {
+  // Log the error for debugging purposes
+  console.error(err.stack);
 
-  // render the error page
+  // Set the status code
   res.status(err.status || 500);
-  res.render('error');
+
+  // Send a JSON response or a simple message
+  res.json({
+    message: 'An error occurred',
+    error: err.message // Or any other error information you wish to send
+  }); 
 });
 
 

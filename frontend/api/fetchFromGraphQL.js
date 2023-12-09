@@ -1,5 +1,5 @@
-const graphqlEndpoint1 = "http://localhost:1000/graphql";
-// const graphqlEndpoint2 = "https://music-match-back-end.onrender.com/graphql";
+//const graphqlEndpoint1 = "http://localhost:1000/graphql";
+const graphqlEndpoint1 = "https://music-match-server.azurewebsites.net/graphql";
 export const makeGraphQLPostRequest = async (mutation, variables) => {
     const response = await fetch(graphqlEndpoint1, {
       method: 'POST',
