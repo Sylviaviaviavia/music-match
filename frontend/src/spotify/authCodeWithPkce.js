@@ -8,7 +8,7 @@ export async function redirectToAuthCodeFlow(clientId) {
     // const front_local = "http://localhost:5173/feed";
     // params.append("redirect_uri", front_local);
 
-    const front_web ="https://final-project-music-match.azurewebsites.net/feed"
+    const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
     params.append("redirect_uri", front_web);
 
     localStorage.setItem("verifier", verifier);
@@ -27,7 +27,7 @@ export async function getAccessToken(clientId, code) {
     // const front_local = "http://localhost:5173/feed";
     // params.append("redirect_uri", front_local);
 
-    const front_web ="https://final-project-music-match.azurewebsites.net/feed"
+    const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
     params.append("redirect_uri", front_web);
 
     const verifier = localStorage.getItem("verifier");
