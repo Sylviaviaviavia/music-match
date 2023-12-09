@@ -3,9 +3,10 @@ var express = require('express');
 const router = express.Router();
 const server = require('http').createServer();
 
+var url = process.env.VITE_FRONTEND_URL
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*"
+        origin: [url]
     }
 });
 
