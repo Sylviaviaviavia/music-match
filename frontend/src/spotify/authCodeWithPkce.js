@@ -5,11 +5,11 @@ export async function redirectToAuthCodeFlow(clientId) {
 
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
-    // const front_local = "http://localhost:5173/feed";
-    // params.append("redirect_uri", front_local);
+    const front_local = "http://localhost:5173/feed";
+    params.append("redirect_uri", front_local);
 
-     const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
-     params.append("redirect_uri", front_web);
+    // const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
+    // params.append("redirect_uri", front_web);
 
     localStorage.setItem("verifier", verifier);
 
@@ -24,11 +24,11 @@ export async function redirectToAuthCodeFlow(clientId) {
 
 export async function getAccessToken(clientId, code) {
     const params = new URLSearchParams();
-    // const front_local = "http://localhost:5173/feed";
-    // params.append("redirect_uri", front_local);
+    const front_local = "http://localhost:5173/feed";
+    params.append("redirect_uri", front_local);
 
-     const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
-     params.append("redirect_uri", front_web);
+    // const front_web ="https://splendid-puppy-9078b3.netlify.app/feed"
+    // params.append("redirect_uri", front_web);
 
     const verifier = localStorage.getItem("verifier");
     params.append("client_id", clientId);
